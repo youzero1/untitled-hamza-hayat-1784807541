@@ -1,17 +1,15 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from '@/pages/Home';
+import PostPage from '@/pages/PostPage';
+import About from '@/pages/About';
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <div className="min-h-screen flex items-center justify-center bg-stone-50 text-stone-600">
-              Loading the blog…
-            </div>
-          }
-        />
+        <Route path="/" element={<Home />} />
+        <Route path="/post/:slug" element={<PostPage />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
   );
